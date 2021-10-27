@@ -1,0 +1,15 @@
+in_dir: bsDownload
+out_prefix: demux
+read_struct: "151T8B11M8B151T"
+lane: "001"
+num_lanes: 1
+data_type: "BaseCalls"
+machine_name: "My_Sequencer"
+run_barcode: 115
+flowcell_barcode: "My_Barcode"
+num_processors: -4
+compress_outputs: "true"
+ignore_unexpected_barcodes: "true"
+seq_center: "My_Lab"
+mem_amount: 16
+mem_type: G

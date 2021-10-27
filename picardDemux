@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# Usage: 
+# bash path/to/script/DS_vcf2maf myConfig.csv my_species my_ncbi_build my_vep_version
+#
+# Example:
+# bash DS_vcf2maf myConfig.csv homo_sapiens GRCh38 99
+# 
+# Be sure you've set up your VCF2MAF_progConfig.yaml to your machine
+
+myLoc=$(dirname $0)
+# This is a run script to make MAF files from 
+# output DS VCFs
+inDir="$1"
+runBarcode="$2"
+outPrefix="$3"
+snakemake -s ${myLoc}/Snakefile \
+--use-conda \
+--conda-frontend mamba \
+--conda-prefix ${myLoc}/.snakemake \
+--keep-going \
+-j 12 \
+--config in_dir="${inDir}" \
+run_barcode="${runBarcode}" \
+out_prefix="${outPrefix}"
