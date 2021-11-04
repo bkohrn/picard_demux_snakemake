@@ -24,7 +24,7 @@ rule check_directory:
     input:
         basecalls_dir = f"{config['in_dir']}/Data/Intensities/BaseCalls/",
     output:
-        check_good = temp(touch(f".{config['out_prefix']}.checkIlluminaDirectoy_good"))
+        check_good = temp(touch(f".{config['out_prefix']}.checkIlluminaDirectory_good"))
     conda:
         "envs/picardEnv.yaml"
     log:
