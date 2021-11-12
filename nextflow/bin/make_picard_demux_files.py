@@ -50,19 +50,19 @@ def main():
                       f"{line_dict['I7_Index_ID']}\t"
                       f"{line_dict['index']}\t"
                       f"{line_dict['index2']}\n")
-        out_btf.write(f"{o.prefix}/fastq/{line_dict['Sample_Name']}/{line_dict['Sample_Name']}\t"
+        out_btf.write(f"fastq/{line_dict['Sample_Name']}/{line_dict['Sample_Name']}\t"
                       f"{line_dict['Sample_Name']}\t"
                       f"{line_dict['I7_Index_ID']}\t"
                       f"{line_dict['index']}\t"
                       f"{line_dict['index2']}\n")
-        out_bts.write(f"{o.prefix}/sam/{line_dict['Sample_Name']}/{line_dict['Sample_Name']}_unmapped.bam\t"
+        out_bts.write(f"sam/{line_dict['Sample_Name']}/{line_dict['Sample_Name']}_unmapped.bam\t"
                       f"{line_dict['Sample_Name']}\t"
                       f"{line_dict['I7_Index_ID']}\t"
                       f"{line_dict['index']}\t"
                       f"{line_dict['index2']}\n")
         out_filesToMake.write(
-            f"{o.prefix}/sam/{line_dict['Sample_Name']}/\n"
-            f"{o.prefix}/fastq/{line_dict['Sample_Name']}/\n")
+            f"sam/{line_dict['Sample_Name']}/\n"
+            f"fastq/{line_dict['Sample_Name']}/\n")
     in_sample_sheet.close()
     out_eib.close()
     out_btf.close()
